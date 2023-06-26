@@ -14,11 +14,11 @@ def get_csv_upload_path(instance, filename):
 
 
 class CsvFileUpload(TimeStampModel):
-    csv_file = models.FileField(upload_to=get_csv_upload_path)
+    csv_file = models.FileField(upload_to=get_csv_upload_path,max_length=600)
     upload_status = models.IntegerField(default=0) # 0=to-be-processed, 1=processing, 2=error, 3=done
     message = models.CharField('Message', max_length=255, blank=True, null=True)
 
     
-def __unicode__(self):
-    file_name = self.csv_file
-    return file_name
+    def __str__(self):
+        file_name = self.csv_file.name.split('/')[1]
+        return file_name
