@@ -28,9 +28,11 @@
               <li class="nav-item px-4">
                 <a class="nav-link active" aria-current="page" href="#">Home 🏠</a>
               </li>
+              {% if user.is_authenticated %}
               <li class="nav-item px-4">
-                <a class="nav-link active" href="#">Upload Csv</a>
+                <a class="nav-link active" href="{% url 'upload_csv' %}">Upload Csv</a>
               </li>
+              {% endif %}
              </ul>
             </div>
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,7 +40,7 @@
                   {% if user.is_authenticated %}
 
                   <li class="nav-item px-4 ">
-                    <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                    <a class="nav-link active" aria-current="page" href="{%  url 'logout' %}">Logout</a>
                   </li>
 
                   {% else %}
@@ -46,13 +48,12 @@
               <li class="nav-item px-4">
                 <a class="nav-link active" aria-current="page"  href="{%  url 'loginto' %}"> Login</a>
               </li>
-
+            
             
               <li class="nav-item px-4 ">
                 <a class="nav-link active" aria-current="page" href="#">SignUp</a>
               </li>
             
-
 
               {% endif %}
              

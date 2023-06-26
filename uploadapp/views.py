@@ -12,7 +12,7 @@ def upload_csv(request):
         form = CsvUploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render(request, 'uploadcsv.html') 
+            return render(request, 'base.html') 
     else:
         form = CsvUploadForm()
     return render(request, 'uploadcsv.html', {'form': form})

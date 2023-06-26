@@ -1,0 +1,76 @@
+customer,site,router_name,access_id,access_pwd,access_url,brand,firmware,router_status,connection_attempts,external_http_access_status
+LMN Communications,Los Angeles,router1,AM10H2qe,g5aKm0R,http://router1,teltonika,teltonika1,True,3,True
+LMN Communications,Los Angeles,router2,xZBkhKqK,coyfbyK,http://router2,teltonika,teltonika1,True,3,True
+LMN Communications,Los Angeles,router3,QBU5YI9O,QiF01h8,http://router3,teltonika,teltonika1,True,3,True
+LMN Communications,Los Angeles,router4,yy0XrM1l,xBCsEzj,http://router4,teltonika,teltonika1,True,3,True
+LMN Communications,Los Angeles,router5,0oRUnInW,A8tSUgC,http://router5,teltonika,teltonika1,True,3,True
+ABC Solutions,Houston,router6,po07RB0r,KDUhcC1,http://router6,teltonika,teltonika1,True,3,True
+ABC Solutions,Houston,router7,djXGigz0,Uxutem2,http://router7,teltonika,teltonika1,True,3,True
+ABC Solutions,Houston,router8,llMQ6lSI,QledSC2,http://router8,teltonika,teltonika1,True,3,True
+ABC Solutions,Houston,router9,Tb8yYjuO,,http://router9,teltonika,teltonika1,True,3,True
+ABC Solutions,Houston,router10,R2VORVEU,DWlhgjb,http://router10,teltonika,teltonika1,True,3,True
+PQR Technologies,New York City,router11,BSY5dLhq,yhZdEg6,http://router11,teltonika,teltonika1,True,3,True
+PQR Technologies,New York City,router12,dhTCmz7S,f0RJbCx,http://router12,teltonika,teltonika1,True,3,True
+PQR Technologies,New York City,router13,nKyZJnBT,DqPSJjW,http://router13,teltonika,teltonika1,True,3,True
+PQR Technologies,New York City,router14,LQyFZ3wz,YwoJGuG,http://router14,teltonika,teltonika1,True,3,True
+PQR Technologies,New York City,router15,aWZrpoaQ,fX81WGe,http://router15,teltonika,teltonika1,True,3,True
+PQR Technologies,Los Angeles,router16,3kLDbPhM,kUM17eB,http://router16,teltonika,teltonika1,True,3,True
+PQR Technologies,Los Angeles,router17,9nzEwCvn,tSaq7U8,http://router17,teltonika,teltonika1,True,3,True
+PQR Technologies,Los Angeles,router18,dkXEm9Tc,rLciNrY,http://router18,teltonika,teltonika1,True,3,True
+PQR Technologies,,router19,QN1J7ORc,sJvB33L,http://router19,teltonika,teltonika1,True,3,True
+PQR Technologies,Los Angeles,router20,v9NQtV6H,Hylmb6p,http://router20,teltonika,teltonika1,True,3,True
+DEF Networks,New York City,router21,TMFFS2VJ,1iJDG1E,http://router21,teltonika,teltonika1,True,3,True
+DEF Networks,New York City,router22,vSmzdXUU,q9sOrzx,http://router22,teltonika,teltonika1,True,3,True
+DEF Networks,New York City,router23,YSGR8Jjm,5GEtRoD,http://router23,teltonika,teltonika1,True,3,True
+DEF Networks,New York City,router24,mKzVxqM7,GbwioKF,http://router24,teltonika,teltonika1,True,3,True
+DEF Networks,New York City,router25,xRDs1sRu,a37qxK2,http://router25,teltonika,teltonika1,True,3,True
+XYZ Corporation,New York City,router26,oXVuQnGf,atatg1H,http://router26,teltonika,teltonika1,True,3,True
+XYZ Corporation,New York City,router27,Cve06qp0,YzVjvS6,http://router27,teltonika,teltonika1,True,3,True
+XYZ Corporation,New York City,router28,8qitXaPU,M1rMDXu,http://router28,teltonika,teltonika1,True,3,True
+XYZ Corporation,New York City,router29,WybQFsnq,ld6rr6E,,teltonika,teltonika1,True,3,True
+XYZ Corporation,New York City,router30,cSCsf0jj,RrtwpaW,http://router30,teltonika,teltonika1,True,3,True
+PQR Technologies,Houston,router31,22Aj6l5u,h0jCtGV,http://router31,teltonika,teltonika1,True,3,True
+PQR Technologies,Houston,router32,x8nr37ek,hy7uQgC,http://router32,teltonika,teltonika1,True,3,True
+PQR Technologies,Houston,router33,hbh09BkG,RARC06v,http://router33,teltonika,teltonika1,True,3,True
+PQR Technologies,Houston,router34,Xst3Jw63,VW1Y7up,http://router34,teltonika,teltonika1,True,3,True
+PQR Technologies,Houston,router35,1Se4ZHxv,s43JLC8,http://router35,teltonika,teltonika1,True,3,True
+DEF Networks,Houston,router36,Z7SWrBTL,VGXYkhe,http://router36,teltonika,teltonika1,True,3,True
+DEF Networks,Houston,router37,5YomFfn2,PHjAaEQ,http://router37,teltonika,teltonika1,True,3,True
+DEF Networks,Houston,router38,o7VBQYqp,dtrAeeZ,http://router38,teltonika,teltonika1,True,3,True
+,Houston,router39,nto3TLgE,XroBfBZ,http://router39,teltonika,teltonika1,True,3,True
+DEF Networks,Houston,router40,o4ssRyBw,kS80AJe,http://router40,teltonika,teltonika1,True,3,True
+ABC Solutions,New York City,router41,Z6DwqvzX,R8aV0Ls,http://router41,teltonika,teltonika1,True,3,True
+ABC Solutions,New York City,router42,K17kizxT,OlhKiFi,http://router42,teltonika,teltonika1,True,3,True
+ABC Solutions,New York City,router43,RodCkebK,wEuxF3P,http://router43,teltonika,teltonika1,True,3,True
+ABC Solutions,New York City,router44,Qny8yZsD,cdqAXrA,http://router44,teltonika,teltonika1,True,3,True
+ABC Solutions,New York City,router45,Klre7uBy,l1lPLKm,http://router45,teltonika,teltonika1,True,3,True
+XYZ Corporation,Houston,router46,BKQER8wT,ggkbQiF,http://router46,teltonika,teltonika1,True,3,True
+XYZ Corporation,Houston,router47,VocMGdO2,yZb48fc,http://router47,teltonika,teltonika1,True,3,True
+XYZ Corporation,Houston,router48,AlbJNmrX,BhmZI37,http://router48,teltonika,teltonika1,True,3,True
+XYZ Corporation,Houston,,HdHek2cF,PEDcgXT,http://router49,teltonika,teltonika1,True,3,True
+XYZ Corporation,Houston,router50,wKz1HuHG,NqDvDIk,http://router50,teltonika,teltonika1,True,3,True
+XYZ Corporation,Los Angeles,router51,cfSnHFPA,5V6i8dw,http://router51,teltonika,teltonika1,True,3,True
+XYZ Corporation,Los Angeles,router52,TTiY9Zfv,KeSQzum,http://router52,teltonika,teltonika1,True,3,True
+XYZ Corporation,Los Angeles,router53,LyzLwTBY,aPPd2Qq,http://router53,teltonika,teltonika1,True,3,True
+XYZ Corporation,Los Angeles,router54,RDul8VpE,tRY0HMV,http://router54,teltonika,teltonika1,True,3,True
+XYZ Corporation,Los Angeles,router55,wZMh6AMx,gpFvFEt,http://router55,teltonika,teltonika1,True,3,True
+ABC Solutions,Los Angeles,router56,hD5qD9b8,tqH9Azn,http://router56,teltonika,teltonika1,True,3,True
+ABC Solutions,Los Angeles,router57,tV5azV2I,QS37T8P,http://router57,teltonika,teltonika1,True,3,True
+ABC Solutions,Los Angeles,router58,VE9UFuZO,AoEelvo,http://router58,teltonika,teltonika1,True,3,True
+ABC Solutions,Los Angeles,router59,MIhun9BE,UrdOUuE,http://router59,teltonika,teltonika1,True,3,True
+ABC Solutions,Los Angeles,router60,MPn8FgCO,dIJ78yE,http://router60,teltonika,teltonika1,True,3,True
+,Los Angeles,router61,Nhqdkbcm,N1ikYTe,http://router61,teltonika,teltonika1,True,3,True
+DEF Networks,Los Angeles,router62,rzNoDpfN,WvfoORP,http://router62,teltonika,teltonika1,True,3,True
+DEF Networks,Los Angeles,router63,zpMGPXtR,HhSYBJq,http://router63,teltonika,teltonika1,True,3,True
+DEF Networks,Los Angeles,router64,wy6uPQdz,tEA7X8a,http://router64,teltonika,teltonika1,True,3,True
+DEF Networks,Los Angeles,router65,gPK9TkRO,0eoJMUy,http://router65,teltonika,teltonika1,True,3,True
+LMN Communications,New York City,router66,nO3jIo0a,YAOM5xl,http://router66,teltonika,teltonika1,True,3,True
+LMN Communications,New York City,router67,nc1xocYS,IWYS55I,http://router67,teltonika,teltonika1,True,3,True
+LMN Communications,New York City,router68,3ihsWSPo,usQh5Sg,http://router68,teltonika,teltonika1,True,3,True
+LMN Communications,New York City,router69,sFMikTs3,NM1KBfF,http://router69,teltonika,teltonika1,True,3,True
+LMN Communications,New York City,router70,5cjowQv9,vozmkW9,http://router70,teltonika,teltonika1,True,3,True
+LMN Communications,Houston,router71,4NMn2HWc,Ggty7vW,http://router71,teltonika,teltonika1,True,3,True
+LMN Communications,,router72,UFPKKNNZ,m4B4gek,http://router72,teltonika,teltonika1,True,3,True
+LMN Communications,Houston,router73,8HSirCmR,Pa63I2G,http://router73,teltonika,teltonika1,True,3,True
+LMN Communications,Houston,router74,IQCNU6N4,vjg9Gq4,http://router74,teltonika,teltonika1,True,3,True
+LMN Communications,Houston,router75,tkibZ05m,r23BP62,http://router75,teltonika,teltonika1,True,3,True

@@ -22,7 +22,7 @@ def loginto(request):
 			if user is not None:
 				login(request, user)
 				messages.success(request, "You are now login is succesfull")
-				return redirect("base.html")
+				return redirect('home')
 		else:
 				messages.error(request,"Invalid username or password.")    
 	form = AuthenticationForm()
