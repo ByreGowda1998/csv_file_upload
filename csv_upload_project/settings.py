@@ -143,3 +143,7 @@ EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = '7f9219b39f0748'
 EMAIL_HOST_PASSWORD = '1535f882179052'
 EMAIL_PORT = '2525'
+
+
+
+CELERY_BROKER_URL = 'amqp://localhost'
