@@ -10,3 +10,6 @@ class CsvUploadForm(ModelForm):
     class Meta:
         model = CsvFileUpload
         fields = ("csv_file","in_time","out_time","email")
+        widgets = {
+            'my_choice': forms.Select(attrs={'class': 'custom-select'}),
+        }

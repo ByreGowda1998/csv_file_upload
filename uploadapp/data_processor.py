@@ -17,14 +17,23 @@ def procees_csvfile(filename=None,pathname=None):
         print(file.in_time,file.out_time,type(file.in_time))
         
         if file:
-            print(file,"path")
-            file_path = file.csv_file.path
+            file_path = file.csv_file.path                                   
             absolute_file_path = os.path.join(settings.MEDIA_ROOT,file_path)
-            no_of_cols = 56
-            df = pd.read_csv(f'{absolute_file_path}', skiprows=7, usecols=[i for i in range(no_of_cols)])
-            df_with_extra_data= pd.read_csv(f'{absolute_file_path}', header=None, nrows=6, names=range(2))
-            IN_TIME = file.in_time
-            OUT_TIME = file.out_time
+
+          
+            no_of_cols = 56                                                                                   
+                                                                                                   
+            df = pd.read_csv(f'{absolute_file_path}', skiprows=7, usecols=[i for i in range(no_of_cols)])     
+
+            df_with_extra_data= pd.read_csv(f'{absolute_file_path}', header=None, nrows=6, names=range(2))   
+            
+            
+           
+            IN_TIME = file.in_time                                                                        
+            OUT_TIME = file.out_time      
+
+
+
             omitted_columns =[0,1,2,3,4,5,6,7]
             omitted_df = df[df.columns[omitted_columns]]
             df = df.iloc[:-1, 8:57]
@@ -55,8 +64,9 @@ def procees_csvfile(filename=None,pathname=None):
             df_no_na = df_with_extra_data.fillna('')
 
 
-            a="/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output"
-            folder_path = os.path.join(settings.MEDIA_ROOT,a)
+            root_path="/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output"
+
+            folder_path = os.path.join(settings.MEDIA_ROOT,root_path)
             file_name = "output.csv"
             file_path = os.path.join(folder_path, file_name)
             email_to=[f"{file.email}"]
@@ -85,7 +95,8 @@ def procees_csvfile(filename=None,pathname=None):
            
             
         else:
-            print("No")
+            print("There is No file ")
 
            
+
 
