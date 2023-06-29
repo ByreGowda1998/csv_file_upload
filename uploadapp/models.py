@@ -33,10 +33,6 @@ def generate_time_choices():
 
 
 class CsvFileUpload(TimeStampModel):
-    # uniq_file_id = models.UUIDField(
-    #      primary_key = True,
-    #      default = uuid.uuid4,
-    #      editable = False)
     Time_Choice=generate_time_choices()
     csv_file = models.FileField(upload_to=get_csv_upload_path,max_length=600)
     in_time= models.CharField(max_length=20 ,choices=Time_Choice)
@@ -49,3 +45,18 @@ class CsvFileUpload(TimeStampModel):
     def __str__(self):
         file_name = self.csv_file.name.split('/')[0]
         return file_name
+    
+
+
+class CsvProcessedfile(TimeStampModel):
+    csv_proccessed_file =models.ForeignKey(CsvFileUpload, on_delete=models.CASCADE ,blank=False)
+    file_name=models.CharField(max_length=400,blank=False)
+    proccedfile_path = models.CharField(max_length=600,blank=False,)
+
+
+
+    def __str__(self):
+        return self.file_name
+
+
+

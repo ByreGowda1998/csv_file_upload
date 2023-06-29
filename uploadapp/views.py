@@ -16,7 +16,7 @@ def upload_csv(request):
             form.save()
             pathname=form.cleaned_data["csv_file"].name
             csv_file=form.cleaned_data["csv_file"].name.replace(' ','_')
-            procees_csvfile(csv_file,pathname)
+            procees_csvfile.delay(csv_file,pathname)
             return render(request, 'base.html') 
         else:
            print(form.errors)

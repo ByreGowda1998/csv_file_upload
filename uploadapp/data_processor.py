@@ -1,19 +1,19 @@
 
 
 # import the corresponding modules
-
+from celery import shared_task
 from django.core.mail import EmailMessage
 import pandas as pd
 import csv 
-from uploadapp.models import CsvFileUpload
+from uploadapp.models import CsvFileUpload,CsvProcessedfile
 import os
 from csv_upload_project import settings
 
-
+@shared_task(name='process_csv_file')
 def procees_csvfile(filename=None,pathname=None):
     print
     if filename and pathname:
-        file=CsvFileUpload.objects.get(csv_file__endswith=filename)
+        file = CsvFileUpload.objects.filter(csv_file__endswith=filename).first()
         print(file.in_time,file.out_time,type(file.in_time))
         
         if file:
@@ -83,6 +83,8 @@ def procees_csvfile(filename=None,pathname=None):
                     else:
                         writer.writerow(row1)
 
+            csv_processed_file = CsvProcessedfile.objects.create(csv_proccessed_file=file, file_name=file_name, proccedfile_path=file_path)
+
             message = EmailMessage(
             "Subject",
             f"{pathname} is proceed ",
@@ -97,6 +99,7 @@ def procees_csvfile(filename=None,pathname=None):
         else:
             print("There is No file ")
 
-           
+    else:
+        print("No file  present in daybase with these filename")       
 
 
