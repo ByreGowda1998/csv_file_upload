@@ -4,12 +4,15 @@ from usersapp.models import TimeStampModel
 from django.db import models
 from datetime import datetime
 
+
 def get_csv_upload_path(instance, filename):
-    now=datetime.now()
-    date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
-    print("date and time:",date_time)
-    folder ="Uploadedfiles"
-    return f'{folder}/{date_time}/{filename}'
+    # now=datetime.now()
+    # date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
+    # print("date and time:",date_time)
+    return f'{filename}'
+
+
+
 
 
 
@@ -17,10 +20,11 @@ def get_csv_upload_path(instance, filename):
 
 class CsvFileUpload(TimeStampModel):
     csv_file = models.FileField(upload_to=get_csv_upload_path,max_length=600)
-    upload_status = models.IntegerField(default=0) 
-    message = models.CharField('Message', max_length=255, blank=True, null=True)
+    in_time= models.CharField(max_length=10 )
+    out_time=models.CharField(max_length=10)
+    email=models.EmailField()
 
-    
+   
     def __str__(self):
-        file_name = self.csv_file.name.split('/')[2]
+        file_name = self.csv_file.name.split('/')[0]
         return file_name
