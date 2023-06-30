@@ -6,20 +6,26 @@ from uploadapp.forms import CsvUploadForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from uploadapp.data_processor import  procees_csvfile
-from uploadapp.models import CsvFileUpload
-
+from uploadapp.models import CsvFileUpload,CsvProcessedfile
+from django.contrib import messages
 
 def upload_csv(request):
     if request.method == 'POST':
         form = CsvUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            form.save() 
             pathname=form.cleaned_data["csv_file"].name
             csv_file=form.cleaned_data["csv_file"].name.replace(' ','_')
-            procees_csvfile.delay(csv_file,pathname)
-            return render(request, 'base.html') 
+            procees_csvfile(csv_file,pathname)
+            return redirect('lis_files')
         else:
-           print(form.errors)
+           errors=form.errors
+           print(errors)
     form = CsvUploadForm()
     return render(request, 'uploadcsv.html', {'form': form})
 
+def listprocssedfile(request):
+    processdcsv_file=CsvProcessedfile.objects.all().order_by('-created_at')
+    
+    return render (request,'listprocssedfile.html',{"processdcsv_file":processdcsv_file})
+        

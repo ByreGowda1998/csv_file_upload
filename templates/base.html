@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,14 +10,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js\cart.js' %}"></script>
-    <title>basetemplate</title>
+    
+
+      <title>{% block title %}
+
+        {% endblock %} </title>
+  
   </head>
   <body style="background: linear-gradient(to right,hsl(311, 14%, 46%), #FFFFFF);">
    
 
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #b2fefa, #a5c8cf);">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #2f9c97, #a5c8cf);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><b>📁CSV upload</b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +31,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li class="nav-item px-4">
-                <a class="nav-link active" aria-current="page" href="#">Home 🏠</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item px-4">
-                <a class="nav-link active" href="{% url 'upload_csv' %}">Upload Csv</a>
+                <a class="nav-link active" href="{% url 'upload_csv' %}">EDA</a>
+              </li>
+              <li class="nav-item px-4">
+                <a class="nav-link active" href="{%  url 'lis_files'  %}">PEDA</a>
               </li>
               {% endif %}
+
+
              </ul>
             </div>
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -64,7 +73,7 @@
         </div>
       </nav>
 
-
+      {% include 'message.html' %}
 
 
 

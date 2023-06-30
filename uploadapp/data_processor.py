@@ -9,7 +9,11 @@ from uploadapp.models import CsvFileUpload,CsvProcessedfile
 import os
 from csv_upload_project import settings
 
-@shared_task(name='process_csv_file')
+def return_email(request):
+    print(request.user)
+
+
+@shared_task(name='process_csvfile')
 def procees_csvfile(filename=None,pathname=None):
     print
     if filename and pathname:
@@ -67,7 +71,9 @@ def procees_csvfile(filename=None,pathname=None):
             root_path="/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output"
 
             folder_path = os.path.join(settings.MEDIA_ROOT,root_path)
-            file_name = "output.csv"
+            print(folder_path)
+            file_name = pathname.replace(".csv","procced.csv")
+           
             file_path = os.path.join(folder_path, file_name)
             email_to=[f"{file.email}"]
             with open(file_path, 'w',newline='') as f:
@@ -85,17 +91,17 @@ def procees_csvfile(filename=None,pathname=None):
 
             csv_processed_file = CsvProcessedfile.objects.create(csv_proccessed_file=file, file_name=file_name, proccedfile_path=file_path)
 
-            message = EmailMessage(
-            "Subject",
-            f"{pathname} is proceed ",
-            "From@example.com",
-            email_to,
-                )
-            with open(file_path, 'rb') as file:
-                message.attach(file_name, file.read(), 'text/csv')
-                message.send(fail_silently=False)
-           
-            
+            # message = EmailMessage(
+            # "Subject",
+            # f"{pathname} is proceed ",
+            # "From@example.com",
+            # email_to,
+            #     )
+            # with open(file_path, 'rb') as file:
+            #     message.attach(file_name, file.read(), 'text/csv')
+            #     message.send(fail_silently=False)
+
+        
         else:
             print("There is No file ")
 

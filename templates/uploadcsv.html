@@ -1,82 +1,108 @@
 {% extends 'base.html' %}
 
+
 {% load crispy_forms_tags %}
-{% block content %}
-
-<title>CSV File Upload</title>
-<style>
 
 
+{% block title %}
 
-  .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius:5px;
-    margin-top: 60px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-    padding: 5px;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  .form-group input[type="file"] {
-    display: block;
-  }
-  .form-group input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  h2{
-
-position: relative;
-margin-top: 30px;
-
-left: 40%;
-
-}
-</style>
-<body>
-  
-  <h2>CSV File Upload</h2>
-<div class="container">
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-   
-    <div class="form-group">
-      <label for="{{ form.csv_file.id_for_label }}">Csv file:</label>
-      {{ form.csv_file }}
-      
-    </div>
-    <div class="form-group">
-      <label for="{{ form.message.id_for_label }}">InTime:</label>
-      {{ form.in_time }}
-     
-    </div>
-    <div class="form-group">
-      <label for="{{ form.message.id_for_label }}">OutTime:</label>
-      {{ form.out_time }}
-      
-    </div>
-    <div class="form-group">
-      <label for="{{ form.message.id_for_label }}">Email:</label>
-      {{ form.email }}
-     
-    </div>
-    <button class="btn btn-primary" type="submit">Upload</button>
-  </form>
-</div>
-</body>
+edapage
 {% endblock %}
 
 
 
+
+{%  block content  %}
+{% include 'message.html' %}
+
+
+
+
+
+<!-- <section class="vh-100" style="background-color: #2779e2;"> -->
+  <div class="container h-100 mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+        <div class="text-center">
+          <h1 class="text-white mb-4" style="font-size: 36px; font-weight: bold ;">EDA</h1>
+
+        </div>
+        <div class="card" style="border-radius: 15px;">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+          <div class="card-body" style="background-color: hsl(73, 19%, 60%);">
+
+            <div class="row align-items-center pt-4 pb-3" >
+              <div class="col-md-3 ps-5">
+
+                <h4 class="mb-0"><strong>Csv File:</strong></h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                {{ form.csv_file }}
+
+              </div>
+            </div>
+
+            <hr class="mx-n3" >
+
+            <div class="row align-items-center py-3" >
+              <div class="col-md-3 ps-5">
+
+                <h4 class="mb-0"><strong>InTime:</strong></h4>
+              </div>
+              <div class="col-md-9 pe-5">
+
+                {{ form.in_time }}
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h4 class="mb-0"><strong>OutTime:</strong></h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                {{ form.out_time }}
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h4 class="mb-0"><strong>Email:</strong> </h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                {{ form.email}}
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="px-5 py-4 text-center">
+              <button type="submit" class="btn btn-primary btn-lg"><h4>Upload</h4></button>
+            </div>
+          </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+
+
+{% endblock %}

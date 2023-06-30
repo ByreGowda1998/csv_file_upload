@@ -15,6 +15,90 @@
     border: 1px solid #ccc;
     border-radius:5px;
     margin-top: 60px;
+    background-color: #8f7272;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-group input[type="file"] {
+    display: block;
+  }
+  .form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  h2{
+
+position: relative;
+margin-top: 30px;
+
+left: 40%;
+
+}
+</style>
+<body>
+  
+  <h2>CSV File Upload</h2>
+<div class="container">
+  <form method="post" enctype="multipart/form-data">
+
+   
+    <div class="form-group">
+      <label for="{{ form.csv_file.id_for_label }}">Csv file:</label>
+      {{ form.csv_file }}
+      
+    </div>
+    <div class="form-group">
+      <label for="{{ form.message.id_for_label }}">InTime:</label>
+      {{ form.in_time }}
+     
+    </div>
+    <div class="form-group">
+      <label for="{{ form.message.id_for_label }}">OutTime:</label>
+      {{ form.out_time }}
+      
+    </div>
+    <div class="form-group">
+      <label for="{{ form.message.id_for_label }}">Email:</label>
+      {{ form.email }}
+     
+    </div>
+    <button class="btn btn-primary" type="submit">Upload</button>
+  </form>
+</div>
+</body>
+{% endblock %}
+
+
+<!-- {% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<title>CSV File Upload</title>
+<style>
+
+
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius:5px;
+    margin-top: 60px;
+    background-color: #8f7272;
+
   }
   .form-group {
     margin-bottom: 15px;
@@ -76,4 +160,4 @@ left: 40%;
   </form>
 </div>
 </body>
-{% endblock %}
+{% endblock %} -->

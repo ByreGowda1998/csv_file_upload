@@ -37,7 +37,7 @@ class CsvFileUpload(TimeStampModel):
     csv_file = models.FileField(upload_to=get_csv_upload_path,max_length=600)
     in_time= models.CharField(max_length=20 ,choices=Time_Choice)
     out_time=models.CharField(max_length=20,choices=Time_Choice)
-    email=models.EmailField()
+    email=models.EmailField(default='')
 
   
 
@@ -45,6 +45,13 @@ class CsvFileUpload(TimeStampModel):
     def __str__(self):
         file_name = self.csv_file.name.split('/')[0]
         return file_name
+    
+
+    def save(self, *args, **kwargs):
+        if not self.email:
+            # Set the default email as the current logged-in user's email
+            self.email = get_user_model().objects.get(username=self.user).email
+        super().save(*args, **kwargs)
     
 
 
