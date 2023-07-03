@@ -1,0 +1,23 @@
+ table {
+            width: 30%; 
+            border-collapse:collapse;
+            font-size: 12px;
+            background-color: #d4e0a5;
+        }
+    
+th, td {
+            padding: 4px;
+            text-align: left;
+            border-bottom: 1px solid #161515;
+        }
+    
+th {    
+    background-color: #ec7741; 
+            color: white; 
+        }
+
+h1{
+
+text-align: center;
+
+}

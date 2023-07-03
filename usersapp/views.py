@@ -8,12 +8,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
-
-
+user =get_user_model
+from csv_upload_project.settings import BASE_DIR
 
 
 # Create your views here.
 def homepage(request):
+    print(user)
     return render(request,'base.html')
 
 def loginto(request):

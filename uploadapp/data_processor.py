@@ -8,6 +8,15 @@ import csv
 from uploadapp.models import CsvFileUpload,CsvProcessedfile
 import os
 from csv_upload_project import settings
+import datetime
+from  csv_upload_project.settings import BASE_DIR
+from pathlib import Path
+from datetime import datetime
+now=datetime.now()
+date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
+
+
+
 
 def return_email(request):
     print(request.user)
@@ -68,13 +77,18 @@ def procees_csvfile(filename=None,pathname=None):
             df_no_na = df_with_extra_data.fillna('')
 
 
-            root_path="/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output"
+            # now = datetime.datetime.now()
+            # yesterday = now - datetime.timedelta(days=1)
+            # TIMESTAMP = yesterday.strftime('%Y-%m-%d-%H-%M-%S')
+            
+            # root_path=f"/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output/{TIMESTAMP}"
 
-            folder_path = os.path.join(settings.MEDIA_ROOT,root_path)
-            print(folder_path)
-            file_name = pathname.replace(".csv","procced.csv")
+            # folder_path = os.path.join(settings.MEDIA_ROOT,root_path)
+            # print(folder_path)
+            file_name = pathname.replace(".csv",f"_processed@{date_time}.csv")
+            file_path = BASE_DIR/"media"/file_name
            
-            file_path = os.path.join(folder_path, file_name)
+            # file_path = os.path.join(folder_path, file_name)
             email_to=[f"{file.email}"]
             with open(file_path, 'w',newline='') as f:
                 writer = csv.writer(f)
@@ -89,7 +103,13 @@ def procees_csvfile(filename=None,pathname=None):
                     else:
                         writer.writerow(row1)
 
-            csv_processed_file = CsvProcessedfile.objects.create(csv_proccessed_file=file, file_name=file_name, proccedfile_path=file_path)
+            print("yess")
+
+           
+            csv_processed_file = CsvProcessedfile.objects.create(csv_processed_file=file, processed_file=file_name )
+   
+
+            print("No")
 
             # message = EmailMessage(
             # "Subject",

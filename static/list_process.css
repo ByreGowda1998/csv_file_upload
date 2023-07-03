@@ -1,0 +1,44 @@
+
+h1 {
+    text-align: center;
+  }
+  
+ 
+  .container-fluid {
+    margin-top: 5px;
+  }
+  
+ 
+  table {
+    margin-bottom: 20px;
+  }
+  
+
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+
+  td {
+    padding: 5px;
+  }
+  
+ 
+  .btn {
+    font-size: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    color: white;
+    background-color: #007bff;
+  }
+  
+
+  .fa-download:before {
+    content: "\f019";
+  }
+  

@@ -24,14 +24,14 @@ edapage
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-9">
         <div class="text-center">
-          <h1 class="text-white mb-4" style="font-size: 36px; font-weight: bold ;">EDA</h1>
+          <h1 class="text-black mb-4">EDA</h1>
 
         </div>
-        <div class="card" style="border-radius: 15px;">
+        <div class="card" >
           <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
-          <div class="card-body" style="background-color: hsl(73, 19%, 60%);">
+          <div class="card-body">
 
             <div class="row align-items-center pt-4 pb-3" >
               <div class="col-md-3 ps-5">
@@ -104,5 +104,9 @@ edapage
   </div>
 <!-- </section> -->
 
+
+{% load static %} 
+
+<link rel="stylesheet" type="text/css" href="{% static 'upload.css' %}">
 
 {% endblock %}
