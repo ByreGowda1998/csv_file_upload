@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import datetime
 now=datetime.now()
 date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
-
+from django.contrib import messages
 
 
 
@@ -24,7 +24,6 @@ def return_email(request):
 
 @shared_task(name='process_csvfile')
 def procees_csvfile(filename=None,pathname=None):
-    print
     if filename and pathname:
         file = CsvFileUpload.objects.filter(csv_file__endswith=filename).first()
         print(file.in_time,file.out_time,type(file.in_time))
@@ -76,20 +75,17 @@ def procees_csvfile(filename=None,pathname=None):
             merged_df = pd.concat([ omitted_df, rounded_df], axis=1)
             df_no_na = df_with_extra_data.fillna('')
 
+            path=BASE_DIR/"media"/"processed"
 
-            # now = datetime.datetime.now()
-            # yesterday = now - datetime.timedelta(days=1)
-            # TIMESTAMP = yesterday.strftime('%Y-%m-%d-%H-%M-%S')
-            
-            # root_path=f"/home/byregm/Documents/Tasks/csvdjango_app/csv_upload_project/output/{TIMESTAMP}"
-
-            # folder_path = os.path.join(settings.MEDIA_ROOT,root_path)
-            # print(folder_path)
+            isExist = os.path.exists(path)
+            if not isExist:
+                os.makedirs(path)
             file_name = pathname.replace(".csv",f"_processed@{date_time}.csv")
-            file_path = BASE_DIR/"media"/file_name
+            file_path = BASE_DIR/"media"/"processed"/file_name
            
-            # file_path = os.path.join(folder_path, file_name)
             email_to=[f"{file.email}"]
+
+            print(email_to,"these my email")
             with open(file_path, 'w',newline='') as f:
                 writer = csv.writer(f)
                 for index,row in df_no_na.iterrows():
@@ -103,29 +99,29 @@ def procees_csvfile(filename=None,pathname=None):
                     else:
                         writer.writerow(row1)
 
-            print("yess")
 
-           
-            csv_processed_file = CsvProcessedfile.objects.create(csv_processed_file=file, processed_file=file_name )
+        
+            csv_processed_file = CsvProcessedfile(csv_processed_file=file, processed_file=file_name )
+            csv_processed_file.save()
    
 
-            print("No")
+      
 
-            # message = EmailMessage(
-            # "Subject",
-            # f"{pathname} is proceed ",
-            # "From@example.com",
-            # email_to,
-            #     )
-            # with open(file_path, 'rb') as file:
-            #     message.attach(file_name, file.read(), 'text/csv')
-            #     message.send(fail_silently=False)
+            message = EmailMessage(
+            "Subject",
+            f"{pathname} is proceed ",
+            "From@example.com",
+            email_to,
+                )
+            with open(file_path, 'rb') as file:
+                message.attach(file_name, file.read(), 'text/csv')
+                message.send(fail_silently=False)
 
         
         else:
-            print("There is No file ")
+            message.errors(f"File {file_name} not present in database")
 
     else:
-        print("No file  present in daybase with these filename")       
+        message.error(f"No file  present in daybase with these filename {file_name}")       
 
 

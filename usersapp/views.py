@@ -34,8 +34,8 @@ def loginto(request):
 	return render(request=request, template_name='login.html', context={"login_form":form}) 
 
 
-@login_required(login_url='loginto')     
+@login_required(login_url='login')     
 def log_out(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect("loginto")
+    return redirect("login")

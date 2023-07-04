@@ -8,11 +8,10 @@ import uuid
 user=get_user_model()
 
 def get_csv_upload_path(instance, filename):
-    # now=datetime.now()
-    # date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
-    # print("date and time:",date_time)
-    return f'{filename}'
-
+    now=datetime.now()
+    date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
+    print("date and time:",date_time)	
+    return f'{date_time}/{filename}'
 
 from django.utils import timezone
 
@@ -39,17 +38,17 @@ class CsvFileUpload(TimeStampModel):
     email=models.EmailField(default='')
 
 
-    
-
     def __str__(self):
-        file_name = self.csv_file.name.split('/')[0]
+        file_name = self.csv_file.name.split('/')[1]
         return file_name
     
 def get_processed_csv_upload_path(instance,filename):
+    print("anything")
     now=datetime.now()
     date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
     print("date and time:",date_time)
-    return f'{date_time}/{filename}'
+    folder= 'processed'
+    return f'/{folder}/{date_time}/{filename}'
 
   
 
@@ -61,8 +60,8 @@ class CsvProcessedfile(TimeStampModel):
 
 
     def __str__(self):
-        csv_processed_file = self.csv_processed_file  
-        return csv_processed_file.csv_file.name
+        csv_processed_file = self.processed_file
+        return csv_processed_file
 
 
 

@@ -13,6 +13,9 @@ processed_file
 
 {% block content %}
 
+{% load static %} 
+
+<link rel="stylesheet" type="text/css" href="{% static 'list_process.css' %}">
 
 <div class="container-fluid h-200 mt-5">
 
@@ -31,7 +34,7 @@ processed_file
         <tr>
             {% for files in processed_file %}
         <td>{{ files.csv_processed_file }}</td>
-          <td>{{ files.processed_file }}</td>
+          <td>{{ files.processed_file.name }}</td>
           <td>{{ files.csv_processed_file.email }}</td>
           <td><form action="{% url 'view_data' pk=files.pk %}" method="post">
             {% csrf_token %}
@@ -53,9 +56,6 @@ processed_file
 
 </div>
 
-{% load static %} 
-
-<link rel="stylesheet" type="text/css" href="{% static 'list_process.css' %}">
 
 
 {% endblock %}

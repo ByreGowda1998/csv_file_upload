@@ -8,6 +8,9 @@ from uploadapp.models import CsvFileUpload
 
 class CsvUploadForm(ModelForm):
     email=forms.EmailField(required=False)
+
+
+
     class Meta:
         model = CsvFileUpload
         fields = ("csv_file","in_time","out_time","email")
